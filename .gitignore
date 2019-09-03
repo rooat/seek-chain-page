@@ -1,2 +1,2 @@
-seek-chain-bak/node_modules/
-seek-chain-vue
+./seek-chain-bak/node_modules/*
+seek-chain-vue/*
