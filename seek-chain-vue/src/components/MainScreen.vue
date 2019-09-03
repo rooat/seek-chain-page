@@ -4,7 +4,7 @@
       当前区块高度：{{blockNumber}}
       距离上一个块时间: {{count_time}}ms
       平均出块时间 ：{{avg_time}}
-      <h2>账户余额</h2>
+      <h2>账户余额:{{balance}}</h2>
       <div>
         区块高度：<input type="number" ref="searchnumber"/>
         <button @click="searchblockbtn">查询区块</button>
