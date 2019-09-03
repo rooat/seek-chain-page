@@ -34,6 +34,7 @@ export default {
   mounted() {
     Initial.Initial();
     this.blockNumberFun();
+    this.balanceFun()
     this.setTimeToblockTime();
   },
   methods: {
@@ -46,6 +47,7 @@ export default {
     },
     async balanceFun(){
       let balance = await this.$web3.eth.getBalance("0x626f4793d01786b47150d1134310a771d7731762")
+      console.log("balance===",balance);
       this.balance = Number(balance)
     },
     blockNumberFun(){
