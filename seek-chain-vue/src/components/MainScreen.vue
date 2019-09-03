@@ -8,7 +8,7 @@
         区块高度：<input type="number" ref="searchnumber"/>
         <button @click="searchblockbtn">查询区块</button>
       </div>
-      <p>{{blockdetail}}</p>
+      
   </div>
 </template>
 
@@ -26,7 +26,8 @@ export default {
       blockdetail:"",
       count_time :0,
       start_time : new Date().getTime(),
-      avg_time:0
+      avg_time:0,
+      balance:0
     }
   },
   mounted() {
@@ -38,8 +39,13 @@ export default {
     setTimeToblockTime(){
       let that = this;
       setInterval(function(){
-       that.blockNumberFun(); 
+       that.blockNumberFun();
+       that.balanceFun() 
       },3000)
+    },
+    async balanceFun(){
+      let balance = await this.$web3.eth.getBalance("0x626f4793d01786b47150d1134310a771d7731762")
+      this.balance = Number(balance)
     },
     blockNumberFun(){
       let that = this
