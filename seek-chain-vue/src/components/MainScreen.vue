@@ -43,7 +43,7 @@ export default {
     },
     blockNumberFun(){
       let that = this
-      axios.post('http://localhost:3000/api/api_block_time_detail',{}).then(function(res){
+      axios.post('/apis/api_block_time_detail',{}).then(function(res){
         let data = res.data.resp;
         if(data && data.length>0){
           that.blockNumber = data[0].block_number;
